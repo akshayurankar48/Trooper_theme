@@ -26,16 +26,15 @@ function pageBanner($args = NULL)
     <div class="page-banner">
         <div class="page-banner__bg-image" style="background-image: url(<?php echo esc_url($args['photo']); ?>);"></div>
         <div class="page-banner__content container container--narrow">
-            <h1 class="page-banner__title"><?php echo esc_html($args['title']); ?></h1>
+            <h1 class="page-banner__title"><?php echo wp_kses_post($args['title']); ?></h1>
             <div class="page-banner__intro">
-                <p><?php echo esc_html($args['subtitle']); ?></p>
+                <p><?php echo wp_kses_post($args['subtitle']); ?></p>
             </div>
         </div>
     </div>
+
 <?php
 }
-
-
 
 function university_files()
 {
@@ -85,3 +84,12 @@ function university_adjust_queries($query)
 }
 
 add_action('pre_get_posts', 'university_adjust_queries');
+
+
+function universityMapKey($api)
+{
+    $api['key'] = 'AIzaSyB7q295RD6nhQcE5VFuvdbAPmV20_NLhSw';
+    return $api;
+}
+
+add_filter('acf/fields/google_map/api', 'universityMapKey');
