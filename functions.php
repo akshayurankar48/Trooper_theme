@@ -1,5 +1,20 @@
 <?php
 
+require get_theme_file_path('/inc/search-route.php');
+
+function university_custom_rest()
+{
+    register_rest_field('post', 'authorName', array(
+        'get_callback' => function () {
+            return get_the_author();
+        }
+    ));
+}
+
+add_action('rest_api_init', 'university_custom_rest');
+
+add_action('rest_api_init', 'university_custom_rest');
+
 function pageBanner($args = NULL)
 {
     // Check if $args is an array
@@ -99,3 +114,19 @@ function universityMapKey($api)
 }
 
 add_filter('acf/fields/google_map/api', 'universityMapKey');
+
+
+// $words = array('We', 'are', 'debugging!');
+// foreach ($words as $word) {
+//     echo $word;
+// }
+
+// for ($i = 0; $i < 100; $i++) {
+//     echo $i, "\n";
+// }
+
+// $values = ['Xdebug', 'is', 'such', 'a', 'useful', 'tool'];
+
+// $values = array_map(fn ($value) => strtoupper($value), $values);
+
+// echo join(' ', $values);
