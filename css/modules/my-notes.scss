@@ -19,7 +19,11 @@
 }
 
 .submit-note:hover {
-  background-color: adjust-color($darkOrange, $lightness: -10%, $saturation: -20%);
+  background-color: adjust-color(
+    $darkOrange,
+    $lightness: -10%,
+    $saturation: -20%
+  );
 }
 
 .edit-note,
@@ -50,7 +54,7 @@
 .note-title-field {
   width: 40%;
   font-size: 1.85rem;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
   color: $mainBlue;
   border: 1px solid transparent;
@@ -71,7 +75,7 @@
 
 .note-body-field {
   color: #333;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   resize: none;
   display: block;
   width: 100%;
@@ -108,7 +112,7 @@
 .new-note-title {
   width: 100%;
   padding: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   border: none;
   margin-bottom: 10px;
   font-size: 1.15rem;
@@ -120,7 +124,7 @@
   box-sizing: border-box;
   resize: none;
   padding: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   border: none;
   margin-bottom: 10px;
   height: 170px;
