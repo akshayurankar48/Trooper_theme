@@ -1,7 +1,8 @@
 <?php
 
-// Include search-route.php file from the 'inc' directory
+// Include search-route.php & like-route.php file from the 'inc' directory
 require get_theme_file_path('/inc/search-route.php');
+require get_theme_file_path('/inc/like-route.php');
 
 // Register a custom REST field 'authorName' for the 'post' type
 function university_custom_rest()
