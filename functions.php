@@ -209,3 +209,12 @@ function makeNotePrivate($data, $postarr)
 
     return $data;
 }
+
+
+add_filter('ai1wm_exclude_content_from_export', 'ignoreCertainFiles');
+
+function ignoreCertainFiles()
+{
+    $exclude_filters[] = 'themes/trooper-university-theme/node_modules';
+    return $exclude_filters;
+}
