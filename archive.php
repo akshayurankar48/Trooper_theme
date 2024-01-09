@@ -2,9 +2,9 @@
 
 get_header();
 pageBanner(array(
-    'title' => 'Welcome to out',
-    'subtitle' => 'Keep up with our latest news.'
-))
+    'title' => get_the_archive_title(),
+    'subtitle' => get_the_archive_description()
+));
 ?>
 
 <div class="container container--narrow page-section">
